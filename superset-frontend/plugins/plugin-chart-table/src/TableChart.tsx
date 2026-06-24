@@ -212,7 +212,7 @@ function cellBackground({
   theme: SupersetTheme;
 }) {
   if (!colorPositiveNegative) {
-    return `${theme.colorFill}`;
+    return `${theme.colorFill}50`;
   }
 
   if (value < 0) {
@@ -1149,6 +1149,7 @@ export default function TableChart<D extends DataRecord = DataRecord>(
             height: 100%;
             display: block;
             top: 0;
+            pointer-events: none;
             ${valueRange &&
             typeof value === 'number' &&
             valueRangeFlag &&
